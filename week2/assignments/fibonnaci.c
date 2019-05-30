@@ -1,16 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 long fibonnaci(int n);
 long fibonnaci_arr(int n);
 long fibo_recursive(int n);
+void stress_test();
 
 int main(void)
 {
-    printf("%ld\n", fibonnaci(10));
-    printf("%ld\n", fibonnaci_arr(10));
-    printf("%ld\n", fibo_recursive(10));
+    // printf("%ld\n", fibonnaci(10));
+    // printf("%ld\n", fibonnaci_arr(10));
+    // printf("%ld\n", fibo_recursive(10));
+    stress_test();
 
     return 0;
+}
+
+void stress_test()
+{
+    while (1)
+    {
+        int n = rand() % 46;
+        printf("Input: %d\n", n);
+
+        long res1 = fibonnaci_arr(n);
+        long res2 = fibo_recursive(n);
+
+        if (res1 != res2)
+        {
+            printf("Wrong answer: %ld %ld\n", res1, res2);
+            break;
+        }
+        else
+        {
+            printf("Okay!\n");
+        }
+    }
 }
 
 // Enter nth position of fibonnaci and returns its value
