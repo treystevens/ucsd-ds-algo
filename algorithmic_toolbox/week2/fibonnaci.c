@@ -8,10 +8,11 @@ void stress_test();
 
 int main(void)
 {
-    // printf("%ld\n", fibonnaci(10));
-    // printf("%ld\n", fibonnaci_arr(10));
-    // printf("%ld\n", fibo_recursive(10));
+
     stress_test();
+    printf("%ld\n", fibonnaci(10));
+    printf("%ld\n", fibonnaci_arr(10));
+    printf("%ld\n", fibo_recursive(10));
 
     return 0;
 }
